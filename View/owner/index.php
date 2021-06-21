@@ -1,55 +1,61 @@
 <!DOCTYPE html>
 <html lang="en">
-
-<head>
+  <head>
+    <!-- Required meta tags -->
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Data Praktikan</title>
-    <link rel="stylesheet" href="assets/css/bootstrap.min.css">
-</head>
+    <link rel="stylesheet" href="assets/css/bootstrap.css">
+    <link rel="stylesheet" type="text/css" href="fontawesome/css/all.min.css">
+    <link rel="stylesheet" type="text/css" href="style.css">
 
-<body>
-    <center>
-        <div class="container">
-            <div class="card mt-5">
-                <div class=" card-header">
-                    <h2>Data Praktikan</h2>
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+
+        <div class="main">
+        <body style="background-color: #CDDEE1">
+            <div class="container">
+                <h2 class="display-6 "><i class="fas fa-user-edit mr-2"></i><b> Owner </b>
+        <small class="font-italic" style="color:#7B949F">Pemilik Sistem</small>
+      </h2><hr style="background-color: #7B949F">
+                <center>
+            <div class="card mt-4" style="width : 80%;">
+                <div class=" card-header " style="background-color:#DEF0FA">
+                    <h2 ><b>Profil</b></h2>
                 </div>
-                <div class="card-body">
-
-                    <table class="table table-striped table-bordered">
-                        <thead>
-                            <tr>
-                                <th>No.</th>
-                                <th>Praktikum</th>
-                                <th>Nama Praktikan</th>
-                                <th>NPM Praktikan</th>
-                                <th>No. HP</th>
-                                <th>Aksi</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <!-- Diganti saat modul 2 -->
-                            <tr>
-                                <td>1</td>
-                                <td>Basis Data</td>
-                                <td>John Doe</td>
-                                <td>06.2071.8.0999</td>
-                                <td>087</td>
-                                <!-- id Diganti saat modul 3 -->
-                                <td><a href="index.php?page=aslab&aksi=nilai&id=#" class="btn btn-outline-primary">Nilai</a></td>
-                            </tr>
-                        </tbody>
-                    </table>
+                <div class="card-body" style="background-color: #44778D;">
+                    <div class="row ml-4" >
+                        <div class="form-inline" >
+                            <label class="form-control mr-sm-2 col-form-label" style="background-color: #CDDEE1;"><span><b>Email Owner</b></span> : <?=$data['nip']?> </label>
+                        </div>
+                    </div>
+                    <div class="row ml-4 mt-2">
+                        <div class="form-inline">
+                            <label class="form-control mr-sm-2 col-form-label" style="background-color: #CDDEE1;"><span><b>Password</b></span> : <?=$data['password']?></label>
+                        </div>
+                    </div>
+                    <div class="row ml-4 mt-2">
+                        <div class="form-inline">
+                            <label class="form-control mr-sm-2 col-form-label" style="background-color: #CDDEE1;"><span><b>Nama Owner</b></span> : <?=$data['nama_Owner']?> </label>
+                        </div>
+                    </div>
+                    <div class="row ml-4 mt-2">
+                        <div class="form-inline">
+                            <label class="form-control mr-sm-2 col-form-label" style="background-color: #CDDEE1;"><span ><b>No.Telp Owner</b></span> : <?=$data['notelp_Owner']?> </label>
+                        </div>
+                    </div>
                 </div>
             </div>
+        </center>
         </div>
-    </center>
+    </body>
+        </div>
+</nav>
 
-    <script src="assets/js/jquery-3.3.1.slim.min.js"></script>
-    <script src="assets/js/popper.min.js"></script>
-    <script src="assets/js/bootstrap.min.css"></script>
-</body>
-
+    <!-- Optional JavaScript
+    jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
+  </body>
 </html>

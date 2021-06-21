@@ -1,62 +1,85 @@
 <!DOCTYPE html>
 <html lang="en">
-
-<head>
+  <head>
+    <!-- Required meta tags -->
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Data Spring Bed</title>
-    <link rel="stylesheet" href="assets/css/bootstrap.min.css">
-</head>
+    <link rel="stylesheet" href="assets/css/bootstrap.css">
+    <link rel="stylesheet" type="text/css" href="fontawesome/css/all.min.css">
+    <link rel="stylesheet" type="text/css" href="style.css">
 
-<body>
-    <center>
-        <div class="container">
-            <div class="card mt-5">
-                <div class=" card-header">
-                    <h2>Data Spring Bed</h2>
-                    <a href="index.php?page=praktikum&aksi=create" class="btn btn-success float-right">Tambah Praktikum</a>
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+
+    
+  
+        <div class="main">
+        <body style="background-color: #CDDEE1">
+            <div class="container">
+                <h2 class="display-6"><b> Barang </b>
+        <small class="font-italic" style="color:#7B949F">Product Item</small>
+         <a href="index.php?page=barang&aksi=create" class=" btn btn-warning float-right">Tambah Barang</a>
+      </h2><hr style="background-color: #7B949F">
+                <center>
+            <div class="card mt-4">
+                <div class=" card-header" style="background-color:#DEF0FA">
+                    <h2 ><b>Data Barang</b></h2>
                 </div>
-                <div class="card-body">
-
-                    <table class="table table-striped table-bordered">
-                        <thead>
+                <div class="card-body bg-light" >
+                    <table class="table table-striped table-bordered" >
+                        <thead class="table-dark">
                             <tr>
                                 <th>No.</th>
                                 <th>Nama Barang</th>
-                                <th>Status</th>
+                                <th>Jenis Barang</th>
+                                <th>Ukuran</th>
+                                <th>Harga</th>
+                                <th>Tebal Barang</th>
                                 <th>Aksi</th>
                             </tr>
                         </thead>
                         <tbody>
-                            <!-- Diganti Saat Modul 2 -->
-                            <?php $no = 1;
-                            foreach($data as $row) : ?>
                             <tr>
-                                <td><?= $no?></td>
-                                <td><?= $row['nama']?></td>
-                                <td><?= $row['Status'] == 0 ? '<span class="badge badge-danger">Tidak Aktif</span>' : '<span class="badge badge-success">Aktif</span>' ?></td>
+                                <td>1</td>
+                                <td>Ruby Dream</td>
+                                <td>Latex</td>
+                                <td>160 x 120</td>
+                                <td>6870000</td>
+                                <td>22 cm</td>
                                 <td>
-                                    <a href="index.php?page=praktikum&aksi=edit&id=<?= $row['id']?>" class="btn btn-warning">Edit</a>
-                                    <?php if ($row['Status'] == 0) : ?>
-                                    <a href="index.php?page=praktikum&aksi=aktifkan&id=<?= $row['id']?>" class="btn btn-success">Aktifkan</a>
-                                    <?php elseif ($row['Status'] == 1) : ?>
-                                    <a href="index.php?page=praktikum&aksi=nonAktifkan&id=<?= $row['id']?>" class="btn btn-danger">Non-Aktifkan</a>
-                                    <?php endif; ?>
+                                    <a href="index.php?page=barang&aksi=edit" class="btn btn-info">Update</a>
+                                    <a href="index.php?page=barang&aksi=delete" class="btn btn-danger">Hapus</a>                             
                                 </td>
                             </tr>
-                            <?php $no++;
-                            endforeach;?>
+                            <tr>
+                                <td>2</td>
+                                <td>Back Pedic</td>
+                                <td>Hybrid</td>
+                                <td>200 x 200</td>
+                                <td>6250000</td>
+                                <td>20 cm</td>
+                                <td>
+                                    <a href="index.php?page=barang&aksi=edit" class="btn btn-info">Update</a>
+                                    <a href="index.php?page=barang&aksi=delete" class="btn btn-danger">Hapus</a>                              
+                                </td>
+                            </tr>
+
                         </tbody>
                     </table>
                 </div>
             </div>
+        </center>
         </div>
-    </center>
+    </body>
+        </div>
 
-    <script src="assets/js/jquery-3.3.1.slim.min.js"></script>
-    <script src="assets/js/popper.min.js"></script>
-    <script src="assets/js/bootstrap.min.css"></script>
-</body>
 
+
+    <!-- Optional JavaScript
+    jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
+  </body>
 </html>
