@@ -14,13 +14,13 @@
 
 <style>
     body{
-	background-color: #DEF0FA;
+	background-color: #17D8AC;
 }
 .container .col-md-4{
 	border-top: 4px solid #3c8dbc;
 }
 h2{
-	color: grey;
+	color: blue;
 }
 .btn{
 	width: 340px;
@@ -45,7 +45,7 @@ h2{
 					<form action="index.php?page=auth&aksi=authOwner" method="POST">
 					  <div class="form-group">
 					    <label>Email</label>
-					    <input type="text" class="form-control" name="email_owner" placeholder="Masukkan NIP Anda">
+					    <input type="text" class="form-control" name="email_owner" placeholder="Masukkan Email Anda">
 					  </div>
 					  <div class="form-group">
 					    <label>PASSWORD</label>
@@ -61,7 +61,7 @@ h2{
 			<div class="row mt-4 text-white">
 				<div class="col-12">
 					<center>
-						<p class="text-secondary">Sistem Informasi Toko Spring Bed</p>
+						<p class="text-secondary"><font color='black'>Sistem Informasi Toko Spring Bed</p>
 					</center>
 				</div>
 			</div>

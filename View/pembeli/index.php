@@ -16,7 +16,6 @@
 <body style="background-color: #CDDEE1">
     <div class="container">
         <h2 class="display-6"><i class="fas fa-users mr-2"></i><b>Pembeli</b>
-        <small class="font-italic" style="color:#7B949F">Pembeli Barang</small>
         <a href="index.php?page=pembeli&aksi=create" class=" btn btn-warning float-right">Tambah Pembeli</a>
         </h2><hr style="background-color: #7B949F">
         <center>

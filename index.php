@@ -2,14 +2,24 @@
 //**Memanggil Helper */
 require_once("Koneksi.php");
 
+//**Memanggil Model */
+require_once("Model/AuthModel.php");
+require_once("Model/OwnerModel.php");
+require_once("Model/PembeliModel.php");
+require_once("Model/BarangModel.php");
+
+/** Memanggil Controller */
+require_once("Controller/AuthController.php");
+
 //Routing dari URL ke Obyek Class PHP
 if (isset($_GET['page']) && isset($_GET['aksi'])) {
+    session_start();
     $page = $_GET['page']; // Berisi nama page
     $aksi = $_GET['aksi']; // Aksi Dari setiap page
 
-    // require_once akan Dirubah Saat Modul 2
+
     if ($page == "auth") {
-        $auth = new AuthController();
+        $auth = new AuthModel();
         if ($aksi == 'login') {
             $auth->login();
         }else if ($aksi == 'authOwner') {
@@ -17,11 +27,11 @@ if (isset($_GET['page']) && isset($_GET['aksi'])) {
         }else if ($aksi == 'logout') {
             $auth->logout(); 
         } else {
-            echo "Method Not Found";
+            echo "Method Not Founds";
         }
     } else if ($page == "owner") {
         require_once("View/menu/index.php");
-            $owner = new OwnerController();
+        $owner = new OwnerModel();
         if ($aksi == 'view') {
             $owner->index();
         }else {
@@ -29,7 +39,7 @@ if (isset($_GET['page']) && isset($_GET['aksi'])) {
         }
     }  else if ($page == "pembeli"){
         require_once("View/menu/index.php");
-           $pembeli = new PembeliController();
+           $pembeli = new PembeliModel();
         if ($aksi == 'view') {
             $pembeli->index();
         }else if ($aksi == 'create') {
@@ -47,18 +57,21 @@ if (isset($_GET['page']) && isset($_GET['aksi'])) {
         }
     } else if ($page == "barang"){
         require_once("View/menu/index.php");
+        $barang = new BarangModel();
         if ($aksi == 'view') {
-            require_once("View/barang/index.php");
+            $barang->index();
         }else if ($aksi == 'create') {
             require_once("View/barang/create.php");
         }else if ($aksi == 'edit') {
-            require_once("View/barang/edit.php");
+            $barang->update();
+        }else if ($aksi == 'delete') {
+            $barang->delete();
         }else {
             echo "Method Not Found";
         }
     } else if ($page == "jenis"){
         require_once("View/menu/index.php");
-            $jenis = new JenisController();
+            $jenis = new JenisModel();
         if ($aksi == 'view') {
             $jenis->index();
         }else if ($aksi == 'create') {
@@ -86,5 +99,5 @@ if (isset($_GET['page']) && isset($_GET['aksi'])) {
         echo "Page Not Found";
     }
 } else {
-    header("location: index.php?page=auth&aksi=view"); //Jangan ada spasi habis location
+    header("location: index.php?page=auth&aksi=login"); //Jangan ada spasi habis location
 }

@@ -25,7 +25,7 @@
                     <div class="row">
                         <div class="col">
                             <label for="">Nama Jenis : </label>
-                            <input type="text" name="nama_Jenis_barang" class="form-control" required>
+                            <input type="text" name="nama_jenis_barang" class="form-control" required>
                         </div>
                     </div>
                     <button type="submit" class="btn btn-primary float-right mt-3">Simpan</button>
