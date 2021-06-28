@@ -51,10 +51,10 @@ class BarangModel{
     /**
      * Function prosesStore berfungsi untuk input data barang
      */
-    public function prosesStore($nama, $harga, $id_jenis)
+    public function prosesStore($nama,$id_jenis,$ukuran, $harga,$tebal_barang)
     {
-        $sql = "INSERT INTO barang(nama_barang, harga, id_jenis) 
-        VALUES ('$nama', $harga, $jenis_id)";
+        $sql = "INSERT INTO barang(nama_barang, id_jenis, ukuran, harga,tebal_barang ) 
+        VALUES ('$nama', $id_jenis,'$ukuran', $harga,'$tebal_barang')";
         return koneksi()->query($sql);
     }
 
@@ -63,10 +63,12 @@ class BarangModel{
      */
     public function store()
     {
-        $nama = $_POST['nama'];
+        $nama = $_POST['nama_barang'];
+        $id_jenis = $_POST['id_jenis'];
+        $ukuran = $_POST['ukuran'];
         $harga = $_POST['harga'];
-        $jenis_id = $_POST['id_jenis'];
-        if ($this->model->prosesStore($nama, $harga, $jenis_id)){
+        $tebal_barang = $_POST['tebal_barang'];
+        if ($this->prosesStore($nama, $id_jenis,$ukuran, $harga,$tebal_barang)){
             header("location: index.php?page=barang&aksi=view&pesan=Berhasil Menambah Data");
         } else {
             header("location: index.php?page=barang&aksi=create&pesan=Gagal Menambah Data");
@@ -113,10 +115,10 @@ class BarangModel{
      * Function update berfungsi untuk mengubah data di database
      
      */
-    public function prosesUpdate($nama, $harga, $jenis_id, $id)
+    public function prosesUpdate($id, $nama, $harga, $id_jenis)
     {
-        $sql = "UPDATE barang SET nama_barang='$nama', harga='$harga', 
-        id_jenis='$jenis_id' WHERE id_barang=$id";
+        $sql = "UPDATE barang SET nama_barang='$nama', harga=$harga, 
+        id_jenis=$id_jenis WHERE id_barang=$id";
         return koneksi()->query($sql);
     }
 
@@ -125,11 +127,11 @@ class BarangModel{
      */
     public function update()
     {
-        $id = $_GET['id_barang'];
-        $nama = $_POST['nama'];
+        $id = $_POST['id_barang'];
+        $nama = $_POST['nama_barang'];
         $harga = $_POST['harga'];
-        $jenis_id = $_POST['jenis_id'];
-        if ($this->prosesUpdate($nama, $harga, $jenis_id, $id)){
+        $id_jenis = $_POST['id_jenis'];
+        if ($this->prosesUpdate( $id, $nama, $harga, $id_jenis)){
             header("location: index.php?page=barang&aksi=view&pesan=Berhasil Mengubah Data");
         } else {
             header("location: index.php?page=barang&aksi=edit&pesan=Gagal Mengubah Data");

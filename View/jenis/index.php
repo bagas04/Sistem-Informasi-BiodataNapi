@@ -16,13 +16,13 @@
 <body style="background-color: #CDDEE1">
     <div class="container">
         <h2 class="display-6"><b> Jenis </b>
-        <small class="font-italic" style="color:#7B949F">Product</small>
+        <small style="color:#7B949F">Barang</small>
         <a href="index.php?page=jenis&aksi=create" class=" btn btn-warning float-right">Tambah Jenis</a>
         </h2><hr style="background-color: #7B949F">
         <center>
             <div class="card mt-4">
                 <div class=" card-header" style="background-color:#DEF0FA">
-                <h2 ><b>Data Jenis</b></h2>
+                <h2 ><b>Data Jenis Barang</b></h2>
                 </div>
                 <div class="card-body bg-light" >
                     <table class="table table-striped table-bordered" >
@@ -41,7 +41,7 @@
                                 <td><?=$row['nama_jenis_barang'];?></td>
                                 <td>
                                     <a href="index.php?page=jenis&aksi=edit&id_jenis=<?=$row['id_jenis']?>" class="btn btn-info">Edit</a>
-                                    <a href="index.php?page=jenis&aksi=delete&id_jenis=<?=$row['id_jenis']?>" class="btn btn-danger">Hapus</a>                             
+                                    <a href="index.php?page=jenis&aksi=delete&id_jenis=<?=$row['id_jenis'];?>" class="btn btn-danger">Hapus</a>                             
                                 </td>
                             </tr>
                             <?php $no++;

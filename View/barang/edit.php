@@ -25,33 +25,26 @@
             </div>
             
                 <div class="card-body bg-light">
-                    <form action="index.php?page=barang&aksi=store" method="POST">
+                    <form action="index.php?page=barang&aksi=update" method="POST">
+                    <input type="hidden" name="id_barang" value="<?= $data['id_barang']?>">
                        
                         <div class="col">
-                                <label >ID Barang :</label>
-                                <input type="text" name="id_barang" class="form-control" value="">
-                            </div>
-                        <div class="col">
-                                <label >Jenis Barang : </label>
-                                <select name="nama_jenis_barang" class="form-control" required>
-                                        <option value="#"></option>
+                            <label >Jenis Barang : </label>
+                            <div>
+                            <select name="id_jenis" class="form-control" required>
+                            <?php foreach ($jenis as $row) :?>
+                                    <option value="<?=$row['id_jenis']?>"><?=$row['nama_jenis_barang']?></option>   
+                            <?php endforeach; ?>
                             </select>
+                            </div>
                         </div>
                         <div class="col">
                                 <label >Nama Barang :</label>
-                                <input type="text" name="nama_barang" class="form-control" value="">
+                                <input type="text" name="nama_barang" class="form-control" value="<?= $data['nama_barang']?>">
                             </div>
-                        <div class="col">
-                                <label >Ukuran :</label>
-                                <input type="text" name="ukuran" class="form-control" value="">
-                        </div>
                             <div class="col">
                                 <label >Harga :</label>
-                                <input type="text" name="harga" class="form-control" value="">
-                            </div>
-                        <div class="col">
-                                <label >Tebal Barang :</label>
-                                <input type="text" name="tebal_barang" class="form-control" value="">
+                                <input type="text" name="harga" class="form-control" value="<?= $data['harga']?>">
                             </div>
                         </div>
                         <button type="submit" class="btn btn-primary float-right mt-3">Simpan</button>

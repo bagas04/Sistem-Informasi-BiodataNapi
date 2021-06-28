@@ -32,7 +32,7 @@
                 <a class="nav-link text-blue" href="index.php?page=pembeli&aksi=view"><i class="fas fa-users mr-3"></i>Pembeli</a><hr class="bg-secondary">
                 </li>
                 <li class="nav-item ">
-                    <a class="nav-link text-blue" href=""><i class="fas fa-cart-plus mr-3"></i></i>Transaksi</a><hr class="bg-secondary">
+                    <a class="nav-link text-blue" href="index.php?page=transaksi&aksi=view"><i class="fas fa-cart-plus mr-3"></i></i>Transaksi</a><hr class="bg-secondary">
                 </li>
                 <li class="nav-item ">
                     <a class="nav-link text-blue" href="index.php?page=barang&aksi=view"><i class="fas fa-store-alt mr-3"></i>Barang</a><hr class="bg-secondary">

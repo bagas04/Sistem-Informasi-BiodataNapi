@@ -45,7 +45,8 @@
                                 <td><?=$row['nomer_hp']?></td>
                                 <td><?=$row['alamat']?></td>
                                 <!-- id Diganti saat modul 3 -->
-                                <td><a href="index.php?page=pembeli&aksi=edit&id_pembeli=<?=$row['id_pembeli']?>" class="btn btn-info">Edit</a>
+                                <td>
+                                    <a href="index.php?page=pembeli&aksi=edit&id_pembeli=<?=$row['id_pembeli']?>" class="btn btn-info">Edit</a>
                                     <a href="index.php?page=pembeli&aksi=delete&id_pembeli=<?=$row['id_pembeli'];?>" class="btn btn-danger">Hapus</a>
                                 </td>
                             </tr>

@@ -7,6 +7,8 @@ require_once("Model/AuthModel.php");
 require_once("Model/OwnerModel.php");
 require_once("Model/PembeliModel.php");
 require_once("Model/BarangModel.php");
+require_once("Model/JenisModel.php");
+require_once("Model/TransaksiModel.php");
 
 /** Memanggil Controller */
 require_once("Controller/AuthController.php");
@@ -61,8 +63,12 @@ if (isset($_GET['page']) && isset($_GET['aksi'])) {
         if ($aksi == 'view') {
             $barang->index();
         }else if ($aksi == 'create') {
-            require_once("View/barang/create.php");
+            $barang->create();
+        }else if ($aksi == 'store') {
+            $barang->store();
         }else if ($aksi == 'edit') {
+            $barang->edit();
+        }else if ($aksi == 'update') {
             $barang->update();
         }else if ($aksi == 'delete') {
             $barang->delete();
@@ -89,9 +95,16 @@ if (isset($_GET['page']) && isset($_GET['aksi'])) {
         }
     } else if ($page == "transaksi") {
         require_once("View/menu/index.php");
+        $transaksi = new TransaksiModel();
         if ($aksi == 'view') {
-            require_once("View/transaksi/info.php");
-        } else {
+            $transaksi->indexpembeli();
+        } else if ($aksi == 'pesanan') {
+            $transaksi->indexpesanan();
+        } else if ($aksi == 'daftar'){
+            $transaksi->indexdaftar();
+        }else if ($aksi == 'store') {
+            $transaksi->Transaksi();
+        }else {
             echo "Method Not Found";
         }
     
