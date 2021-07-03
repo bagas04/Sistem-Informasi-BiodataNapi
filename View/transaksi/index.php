@@ -17,6 +17,7 @@
 <body style="background-color: #CDDEE1">
     <div class="container">
         <h2 class="display-6"><i class="fas fa-cart-plus mr-2"></i><b>Transaksi</b>
+        <a href="index.php?page=transaksi&aksi=daftar" class=" btn btn-warning float-right mr-2">Tambah Pesanan</a>
         </h2><hr style="background-color: #7B949F">
         <center>
             <div class="card mt-4"  >

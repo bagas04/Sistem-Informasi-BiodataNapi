@@ -17,7 +17,6 @@
 <body style="background-color: #CDDEE1">
     <div class="container">
         <h2 class="display-6"><i class="fas fa-cart-plus mr-2"></i><b>Data Transaksi Pembeli</b>
-        <a href="index.php?page=transaksi&aksi=daftar" class=" btn btn-warning float-right mr-2">Tambah Pesanan</a>
         <a href="index.php?page=transaksi&aksi=view" class=" btn btn-warning float-right mr-2">Kembali</a>
         </h2><hr style="background-color: #7B949F">
         <center>

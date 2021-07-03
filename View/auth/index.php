@@ -45,7 +45,7 @@ h2{
 					<form action="index.php?page=auth&aksi=authOwner" method="POST">
 					  <div class="form-group">
 					    <label>Email</label>
-					    <input type="text" class="form-control" name="email_owner" placeholder="Masukkan Email Anda">
+					    <input type="email" class="form-control" name="email_owner" placeholder="Masukkan Email Anda">
 					  </div>
 					  <div class="form-group">
 					    <label>PASSWORD</label>

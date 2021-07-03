@@ -12,6 +12,10 @@ require_once("Model/TransaksiModel.php");
 
 /** Memanggil Controller */
 require_once("Controller/AuthController.php");
+require_once("Controller/OwnerController.php");
+require_once("Controller/PembeliController.php");
+require_once("Controller/BarangController.php");
+require_once("Controller/JenisController.php");
 
 //Routing dari URL ke Obyek Class PHP
 if (isset($_GET['page']) && isset($_GET['aksi'])) {
@@ -21,7 +25,7 @@ if (isset($_GET['page']) && isset($_GET['aksi'])) {
 
 
     if ($page == "auth") {
-        $auth = new AuthModel();
+        $auth = new AuthController();
         if ($aksi == 'login') {
             $auth->login();
         }else if ($aksi == 'authOwner') {
@@ -33,7 +37,7 @@ if (isset($_GET['page']) && isset($_GET['aksi'])) {
         }
     } else if ($page == "owner") {
         require_once("View/menu/index.php");
-        $owner = new OwnerModel();
+        $owner = new OwnerController();
         if ($aksi == 'view') {
             $owner->index();
         }else {
@@ -41,7 +45,7 @@ if (isset($_GET['page']) && isset($_GET['aksi'])) {
         }
     }  else if ($page == "pembeli"){
         require_once("View/menu/index.php");
-           $pembeli = new PembeliModel();
+           $pembeli = new PembeliController();
         if ($aksi == 'view') {
             $pembeli->index();
         }else if ($aksi == 'create') {
@@ -59,7 +63,7 @@ if (isset($_GET['page']) && isset($_GET['aksi'])) {
         }
     } else if ($page == "barang"){
         require_once("View/menu/index.php");
-        $barang = new BarangModel();
+        $barang = new BarangController();
         if ($aksi == 'view') {
             $barang->index();
         }else if ($aksi == 'create') {
@@ -77,7 +81,7 @@ if (isset($_GET['page']) && isset($_GET['aksi'])) {
         }
     } else if ($page == "jenis"){
         require_once("View/menu/index.php");
-            $jenis = new JenisModel();
+            $jenis = new JenisController();
         if ($aksi == 'view') {
             $jenis->index();
         }else if ($aksi == 'create') {

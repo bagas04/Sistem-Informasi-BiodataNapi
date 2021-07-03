@@ -32,7 +32,7 @@
                     </div>
                     <div class="form-group">
                         <label>Email : </label>
-                        <input type="text" class="form-control" name="email_pembeli">
+                        <input type="email" class="form-control" name="email_pembeli">
                     </div>
                     <div class="form-group">
                         <label>Nomer Hp : </label>
