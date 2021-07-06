@@ -50,47 +50,4 @@ class TransaksiModel{
         return koneksi()->query($sql);
     }
 
-    /**berfungsi untuk menampilkan view dalam transaksi dan menampilkan kembali data pembelinya */
-    public function indexpembeli(){
-        $data = $this->getpembeli();
-        extract($data);
-        require_once("View/transaksi/index.php");
-    }
-
-    /**berfungsi untuk menamilkan data pesanan suatu pembeli */
-    public  function indexpesanan(){
-        $id_pembeli = $_GET['id_pembeli'];
-        $data = $this->getTransaksi($id_pembeli);
-        extract($data);
-        require_once("View/transaksi/pesanan.php");
-    }
-
-    /**proses menginputkan suatu transaksi untuk sebuah pembeli */
-    public function Transaksi()
-    {
-        $id_barang = $_POST['id_barang'];
-        $id_pembeli = $_POST['id_pembeli'];
-        $tanggal = date("Y-m-d");
-        $jumlahbarang = $_POST['jumlah_barang'];
-        $harga = $this->getHargaBarang($id_barang);
-        $total = $jumlahbarang * $harga['harga'];
-        $jumlahbayar = $_POST['jumlah_bayar'];
-        $kembalian = $jumlahbayar - $total;
-        if($this->prosesTransaksi($id_barang, $id_pembeli, $tanggal, $jumlahbarang, $total, $jumlahbayar, $kembalian)){
-            header("location: index.php?page=transaksi&aksi=view&pesan=Berhasil Tambah Data transaksi");
-        }
-        else{
-            header("location: index.php?page=transaksi&aksi=daftar&pesan=Gagal Tambah Data");
-        }
-    }
-
-    /**untuk menamilkan seluruh data pembeli dan data barang yang ada */
-    public  function indexdaftar(){
-        $data_pembeli = $this->getpembeli();
-        $data_barang = $this->getbarang();
-        extract($data_pembeli);
-        extract($data_barang);
-        require_once("View/transaksi/daftar.php");
-    }
-
 }

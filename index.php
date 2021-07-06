@@ -16,6 +16,7 @@ require_once("Controller/OwnerController.php");
 require_once("Controller/PembeliController.php");
 require_once("Controller/BarangController.php");
 require_once("Controller/JenisController.php");
+require_once("Controller/TransaksiController.php");
 
 //Routing dari URL ke Obyek Class PHP
 if (isset($_GET['page']) && isset($_GET['aksi'])) {
@@ -99,7 +100,7 @@ if (isset($_GET['page']) && isset($_GET['aksi'])) {
         }
     } else if ($page == "transaksi") {
         require_once("View/menu/index.php");
-        $transaksi = new TransaksiModel();
+        $transaksi = new TransaksiController();
         if ($aksi == 'view') {
             $transaksi->indexpembeli();
         } else if ($aksi == 'pesanan') {
