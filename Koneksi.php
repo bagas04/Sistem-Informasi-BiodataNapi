@@ -9,7 +9,7 @@
      $db_host = "localhost";
      $db_user = "root";
      $db_password = "";
-     $db_database = "tokospringbed";
+     $db_database = "db_napi1";
 
      try {
          return new mysqli($db_host,$db_user,$db_password,$db_database);

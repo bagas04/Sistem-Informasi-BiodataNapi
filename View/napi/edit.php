@@ -12,57 +12,40 @@
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
 
-
 <div class="main">
 <body style="background-color: #CDDEE1">
-
 <div class="container">
         <div class="card mt-5">
             <div class="card-header" style="background-color:#DEF0FA">
             <center>
-                <h2><b>Tambah Data </b></h2>
-            </center>
-                <a href="index.php?page=transaksi&aksi=view" class="btn btn-info float-right">Kembali</a>
+                <h2><b>Edit Data napi</b></h2>
+                </center>
+                <a href="index.php?page=napi&aksi=view" class="btn btn-info float-right">Kembali</a>
             </div>
             <div class="card-body bg-light">
-                <form action="index.php?page=transaksi&aksi=store" method="POST">
+                <form action="index.php?page=napi&aksi=update" method="POST">
+                <input type="hidden" name="id_napi" value="<?= $data['id_napi']; ?>">
                     <div class="form-group">
-                            <label >Nama Barang : </label>
-                            <div>
-                            <select name="id_barang" class="form-control" required>
-                            <?php foreach ($data_barang as $row) :?>
-                                    <option value="<?=$row['id_barang']?>"><?=$row['nama_barang']?> (Rp <?=$row['harga']?>)</option>   
-                            <?php endforeach; ?>
-                            </select>
-                            </div>
+                        <label>Nama Napi: </label>
+                        <input type="text" class="form-control" name="nama" value="<?= $data['nama']?>">
                     </div>
                     <div class="form-group">
-                            <label >Nama Pembeli : </label>
-                            <div>
-                            <select name="id_pembeli" class="form-control" required>
-                            <?php foreach ($data_pembeli as $row) :?>
-                                    <option value="<?=$row['id_pembeli']?>"><?=$row['nama']?></option>   
-                            <?php endforeach; ?>
-                            </select>
-                            </div>
+                        <label>Tgl Lahir : </label>
+                        <input type="text" class="form-control" name="tanggal_lahir" value="<?= $data['tanggal_lahir']?>">
                     </div>
                     <div class="form-group">
-                        <label>Tanggal Transaksi : </label>
-                        <input type="date" class="form-control" name="tgl_transaksi">
+                        <label>Nomer Hp : </label>
+                        <input type="text" class="form-control" name="nomer_hp" value="<?= $data['nomer_hp']?>">
                     </div>
                     <div class="form-group">
-                        <label> Jumlah Barang: </label>
-                        <input type="text" class="form-control" name="jumlah_barang">
+                        <label>Alamat napi</label>
+                        <input type="text" class="form-control" name="alamat" value="<?= $data['alamat']?>">
                     </div>
-                    <div class="form-group">
-                        <label> Jumlah Bayar: </label>
-                        <input type="text" class="form-control" name="jumlah_bayar">
-                    </div>
-                    <button type="submit" class="btn btn-success btn-lg btn-block">Daftar</button>
+                    <button type="submit" class="btn btn-success btn-lg btn-block">Simpan</button>
                 </form>
             </div>
         </div>
-    </div>   
+</div>    
 </body>
 </div>
 

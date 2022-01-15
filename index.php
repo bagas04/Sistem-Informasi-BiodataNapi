@@ -5,18 +5,12 @@ require_once("Koneksi.php");
 //**Memanggil Model */
 require_once("Model/AuthModel.php");
 require_once("Model/OwnerModel.php");
-require_once("Model/PembeliModel.php");
-require_once("Model/BarangModel.php");
+require_once("Model/NapiModel.php");
+require_once("Model/PelanggaranModel.php");
 require_once("Model/JenisModel.php");
-require_once("Model/TransaksiModel.php");
+require_once("Model/seluruhdataModel.php");
 
-/** Memanggil Controller */
-require_once("Controller/AuthController.php");
-require_once("Controller/OwnerController.php");
-require_once("Controller/PembeliController.php");
-require_once("Controller/BarangController.php");
-require_once("Controller/JenisController.php");
-require_once("Controller/TransaksiController.php");
+
 
 //Routing dari URL ke Obyek Class PHP
 if (isset($_GET['page']) && isset($_GET['aksi'])) {
@@ -26,7 +20,7 @@ if (isset($_GET['page']) && isset($_GET['aksi'])) {
 
 
     if ($page == "auth") {
-        $auth = new AuthController();
+        $auth = new AuthModel();
         if ($aksi == 'login') {
             $auth->login();
         }else if ($aksi == 'authOwner') {
@@ -38,51 +32,51 @@ if (isset($_GET['page']) && isset($_GET['aksi'])) {
         }
     } else if ($page == "owner") {
         require_once("View/menu/index.php");
-        $owner = new OwnerController();
+        $owner = new OwnerModel();
         if ($aksi == 'view') {
             $owner->index();
         }else {
             echo "Method Not Found";
         }
-    }  else if ($page == "pembeli"){
+    }  else if ($page == "napi"){
         require_once("View/menu/index.php");
-           $pembeli = new PembeliController();
+           $napi = new NapiModel();
         if ($aksi == 'view') {
-            $pembeli->index();
+            $napi->index();
         }else if ($aksi == 'create') {
-            $pembeli->create();
+            $napi->create();
         }else if ($aksi == 'store') {
-            $pembeli->store();
+            $napi->store();
         }else if ($aksi == 'delete') {
-            $pembeli->delete();
+            $napi->delete();
         }else if ($aksi == 'edit') {
-            $pembeli->edit();
+            $napi->edit();
         } else if ($aksi == 'update') {
-            $pembeli->update();
+            $napi->update();
         }else {
             echo "Method Not Found";
         }
-    } else if ($page == "barang"){
+    } else if ($page == "pelanggaran"){
         require_once("View/menu/index.php");
-        $barang = new BarangController();
+        $pelanggaran = new PelanggaranModel();
         if ($aksi == 'view') {
-            $barang->index();
+            $pelanggaran->index();
         }else if ($aksi == 'create') {
-            $barang->create();
+            $pelanggaran->create();
         }else if ($aksi == 'store') {
-            $barang->store();
+            $pelanggaran->store();
         }else if ($aksi == 'edit') {
-            $barang->edit();
+            $pelanggaran->edit();
         }else if ($aksi == 'update') {
-            $barang->update();
+            $pelanggaran->update();
         }else if ($aksi == 'delete') {
-            $barang->delete();
+            $pelanggaran->delete();
         }else {
             echo "Method Not Found";
         }
     } else if ($page == "jenis"){
         require_once("View/menu/index.php");
-            $jenis = new JenisController();
+            $jenis = new JenisModel();
         if ($aksi == 'view') {
             $jenis->index();
         }else if ($aksi == 'create') {
@@ -98,17 +92,17 @@ if (isset($_GET['page']) && isset($_GET['aksi'])) {
         }else {
             echo "Method Not Found";
         }
-    } else if ($page == "transaksi") {
+    } else if ($page == "seluruhdata") {
         require_once("View/menu/index.php");
-        $transaksi = new TransaksiController();
+        $seluruhdata = new seluruhdataModel();
         if ($aksi == 'view') {
-            $transaksi->indexpembeli();
+            $seluruhdata->indexnapi();
         } else if ($aksi == 'pesanan') {
-            $transaksi->indexpesanan();
+            $seluruhdata->indexpesanan();
         } else if ($aksi == 'daftar'){
-            $transaksi->indexdaftar();
+            $seluruhdata->indexdaftar();
         }else if ($aksi == 'store') {
-            $transaksi->Transaksi();
+            $seluruhdata->store();
         }else {
             echo "Method Not Found";
         }

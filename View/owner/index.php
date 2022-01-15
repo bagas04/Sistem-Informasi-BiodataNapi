@@ -15,7 +15,7 @@
         <div class="main">
         <body style="background-color: #CDDEE1">
             <div class="container">
-                <h2 class="display-6 "><i class="fas fa-user-circle mr-3"></i><b> Owner </b>
+                <h2 class="display-6 "><i class="fas fa-address-card mr-3"></i><b> Admin </b>
       </h2><hr style="background-color: #7B949F">
                 <center>
             <div class="card mt-4" style="width : 80%;">
@@ -25,7 +25,7 @@
                 <div class="card-body" style="background-color: #44778D;">
                     <div class="row ml-4" >
                         <div class="form-inline" >
-                            <label class="form-control mr-sm-2 col-form-label" style="background-color: #CDDEE1;"><span><b>Email Owner</b></span> : <?=$data['email_owner']?> </label>
+                            <label class="form-control mr-sm-2 col-form-label" style="background-color: #CDDEE1;"><span><b>Email Admin</b></span> : <?=$data['email_admin']?> </label>
                         </div>
                     </div>
                     <div class="row ml-4 mt-2">
@@ -35,12 +35,12 @@
                     </div>
                     <div class="row ml-4 mt-2">
                         <div class="form-inline">
-                            <label class="form-control mr-sm-2 col-form-label" style="background-color: #CDDEE1;"><span><b>Nama Owner</b></span> : <?=$data['nama_owner']?> </label>
+                            <label class="form-control mr-sm-2 col-form-label" style="background-color: #CDDEE1;"><span><b>Nama Admin</b></span> : <?=$data['nama_admin']?> </label>
                         </div>
                     </div>
                     <div class="row ml-4 mt-2">
                         <div class="form-inline">
-                            <label class="form-control mr-sm-2 col-form-label" style="background-color: #CDDEE1;"><span ><b>No.Telp Owner</b></span> : <?=$data['nomer_hp']?> </label>
+                            <label class="form-control mr-sm-2 col-form-label" style="background-color: #CDDEE1;"><span ><b>No.Telp Admin</b></span> : <?=$data['nomer_hp']?> </label>
                         </div>
                     </div>
                 </div>

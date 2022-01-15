@@ -12,40 +12,41 @@
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
 
+
 <div class="main">
 <body style="background-color: #CDDEE1">
+
 <div class="container">
         <div class="card mt-5">
             <div class="card-header" style="background-color:#DEF0FA">
             <center>
-                <h2><b>Edit Data Pembeli</b></h2>
-                </center>
-                <a href="index.php?page=pembeli&aksi=view" class="btn btn-info float-right">Kembali</a>
+                <h2><b>Tambah Data Napi</b></h2>
+            </center>
+                <a href="index.php?page=napi&aksi=view" class="btn btn-info float-right">Kembali</a>
             </div>
             <div class="card-body bg-light">
-                <form action="index.php?page=pembeli&aksi=update" method="POST">
-                <input type="hidden" name="id_pembeli" value="<?= $data['id_pembeli']; ?>">
+                <form action="index.php?page=napi&aksi=store" method="POST">
                     <div class="form-group">
-                        <label>Nama Pembeli: </label>
-                        <input type="text" class="form-control" name="nama" value="<?= $data['nama']?>">
+                        <label>Nama : </label>
+                        <input type="text" class="form-control" name="nama">
                     </div>
                     <div class="form-group">
-                        <label>Email Pembeli : </label>
-                        <input type="email" class="form-control" name="email_pembeli" value="<?= $data['email_pembeli']?>">
+                        <label>Tgl Lahir : </label>
+                        <input type="date" class="form-control" name="tanggal_lahir">
                     </div>
                     <div class="form-group">
                         <label>Nomer Hp : </label>
-                        <input type="text" class="form-control" name="nomer_hp" value="<?= $data['nomer_hp']?>">
+                        <input type="text" class="form-control" name="nomer_hp">
                     </div>
                     <div class="form-group">
-                        <label>Alamat Pembeli</label>
-                        <input type="text" class="form-control" name="alamat" value="<?= $data['alamat']?>">
+                        <label>Alamat : </label>
+                        <input type="text" class="form-control" name="alamat">
                     </div>
-                    <button type="submit" class="btn btn-success btn-lg btn-block">Simpan</button>
+                    <button type="submit" class="btn btn-success btn-lg btn-block">Daftar</button>
                 </form>
             </div>
         </div>
-</div>    
+    </div>   
 </body>
 </div>
 

@@ -25,8 +25,8 @@
                     <input type="hidden" name="id_jenis" value="<?= $data['id_jenis']; ?>">
                     <div class="row">
                         <div class="col">
-                            <label for="">Nama Jenis : </label>
-                            <input type="text" name="nama_jenis_barang" class="form-control" value="<?= $data['nama_jenis_barang'];?>">
+                            <label for="">Jenis Hukuman : </label>
+                            <input type="text" name="nama_jenis" class="form-control" value="<?= $data['nama_jenis'];?>">
                         </div>
                     </div>
                         <button type="submit" class="btn btn-primary float-right mt-3">Simpan</button>

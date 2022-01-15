@@ -16,23 +16,23 @@
     <div class="main">
 <body style="background-color: #CDDEE1">
     <div class="container">
-        <h2 class="display-6"><i class="fas fa-cart-plus mr-2"></i><b>Transaksi</b>
-        <a href="index.php?page=transaksi&aksi=daftar" class=" btn btn-warning float-right mr-2">Tambah Pesanan</a>
+        <h2 class="display-6"><i class="fas fa-users mr-2"></i><b>Seluruh Data Napi</b>
+        <a href="index.php?page=seluruhdata&aksi=daftar" class=" btn btn-warning float-right mr-2">Tambah Data</a>
         </h2><hr style="background-color: #7B949F">
         <center>
             <div class="card mt-4"  >
                 <div class=" card-header" style="background-color:#DEF0FA">
-                    <h2><b>Data Pembeli</b></h2>
+                    <h2><b>Informasi Pelanggaran Napi</b></h2>
                 </div>
                 <div class="card-body bg-light"  >
                     <table class="table table-striped table-bordered" >
                         <thead class="table-dark">
                             <tr>
                                 <th>No.</th>
-                                <th>Nama Pembeli</th>
-                                <th>Email Pembeli</th>
-                                <th>No.HP Pembeli</th>
+                                <th>Nama Napi</th>
                                 <th>Alamat</th>
+                                <th>Tgl.Lahir</th>
+                                <th>No.HP </th>
                                 <th>Aksi</th>
                             </tr>
                         </thead>
@@ -40,14 +40,13 @@
                         <?php $no = 1;
                             foreach($data as $row) :?>
                             <tr>
-                                <td><?=$no?></td>
+                            <td><?=$no?></td>
                                 <td><?=$row['nama']?></td>
-                                <td><?=$row['email_pembeli']?></td>
-                                <td><?=$row['nomer_hp']?></td>
                                 <td><?=$row['alamat']?></td>
-                                <!-- id Diganti saat modul 3 -->
+                                <td><?=$row['tanggal_lahir']?></td>
+                                <td><?=$row['nomer_hp']?></td>
                                 <td>
-                                    <a href="index.php?page=transaksi&aksi=pesanan&id_pembeli=<?=$row['id_pembeli']?>" class="btn btn-info">pesanan</a>
+                                    <a href="index.php?page=seluruhdata&aksi=pesanan&id_napi=<?=$row['id_napi']?>" class="btn btn-info">Data Lengkap</a>
                                 </td>
                             </tr>
                             <?php $no++; 

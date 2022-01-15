@@ -19,39 +19,32 @@
         <div class="card mt-5">
             <div class="card-header" style="background-color:#DEF0FA">
             <center>
-                <h2><b>Edit Barang</b></h2>
+                <h2><b>Tambah Pelanggaran yang Berlaku</b></h2>
                 </center>
-                <a href="index.php?page=barang&aksi=view" class="btn btn-info float-right">Kembali</a>
+                <a href="index.php?page=pelanggaran&aksi=view" class="btn btn-info float-right">Kembali</a>
             </div>
             
-                <div class="card-body bg-light">
-                    <form action="index.php?page=barang&aksi=update" method="POST">
-                    <input type="hidden" name="id_barang" value="<?= $data['id_barang']?>">
-                       
-                        <div class="col">
-                            <label >Jenis Barang : </label>
+            <div class="card-body bg-light">
+                <form action="index.php?page=pelanggaran&aksi=store" method="POST">
+                    <div class="form-group">
+                        <label>Nama Pelanggaran : </label>
+                        <input type="text" class="form-control" name="nama_pelanggaran">
+                    </div>
+                    <div class="form-group">
+                            <label >Jenis Hukuman : </label>
                             <div>
                             <select name="id_jenis" class="form-control" required>
                             <?php foreach ($jenis as $row) :?>
-                                    <option value="<?=$row['id_jenis']?>"><?=$row['nama_jenis_barang']?></option>   
+                                    <option value="<?=$row['id_jenis']?>"><?=$row['nama_jenis']?></option>   
                             <?php endforeach; ?>
                             </select>
                             </div>
-                        </div>
-                        <div class="col">
-                                <label >Nama Barang :</label>
-                                <input type="text" name="nama_barang" class="form-control" value="<?= $data['nama_barang']?>">
-                            </div>
-                            <div class="col">
-                                <label >Harga :</label>
-                                <input type="text" name="harga" class="form-control" value="<?= $data['harga']?>">
-                            </div>
-                        </div>
-                        <button type="submit" class="btn btn-primary float-right mt-3">Simpan</button>
-                    </form>
+                    </div>
+                    
+                    <button type="submit" class="btn btn-success btn-lg btn-block">Daftar</button>
+                </form>
+            </div>
 
-
-                </div>
         </div>
     </div>
     

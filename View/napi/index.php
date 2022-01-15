@@ -8,33 +8,31 @@
     <link rel="stylesheet" href="assets/css/bootstrap.css">
     <link rel="stylesheet" type="text/css" href="fontawesome/css/all.min.css">
     <link rel="stylesheet" type="text/css" href="style.css">
-    <link rel="stylesheet" type="text/css" href="cdn.datatables.net/1.10.25/css/jquery.dataTables.min.css">
-
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
 
-    <div class="main">
+
+<div class="main">
 <body style="background-color: #CDDEE1">
     <div class="container">
-        <h2 class="display-6"><i class="fas fa-cart-plus mr-2"></i><b>Data Transaksi Pembeli</b>
-        <a href="index.php?page=transaksi&aksi=view" class=" btn btn-warning float-right mr-2">Kembali</a>
+        <h2 class="display-6"><i class="fas fa-users mr-2"></i><b>Data Napi</b>
+        <a href="index.php?page=napi&aksi=create" class=" btn btn-warning float-right">Tambah Data</a>
         </h2><hr style="background-color: #7B949F">
         <center>
             <div class="card mt-4"  >
                 <div class=" card-header" style="background-color:#DEF0FA">
-                    <h2><b>Data Transaksi</b></h2>
+                    <h2><b>Data Napi</b></h2>
                 </div>
                 <div class="card-body bg-light"  >
                     <table class="table table-striped table-bordered" >
                         <thead class="table-dark">
                             <tr>
                                 <th>No.</th>
-                                <th>Nama Barang </th>
-                                <th>Tgl Transaksi</th>
-                                <th>Jumlah Barang</th>
-                                <th>Total</th>
-                                <th>Jumlah Bayar</th>
-                                <th>Kembalian</th>
+                                <th>Nama Napi</th>
+                                <th>Alamat</th>
+                                <th>Tgl.Lahir</th>
+                                <th>No.HP </th>
+                                <th>Aksi</th>
                             </tr>
                         </thead>
                         <tbody>
@@ -42,14 +40,14 @@
                             foreach($data as $row) :?>
                             <tr>
                                 <td><?=$no?></td>
-                                <td><?=$row['nama_barang']?></td>
-                                <td><?=$row['tgl_transaksi']?></td>
-                                <td><?=$row['jumlah_barang']?></td>
-                                <td><?=$row['total']?></td>
-                                <td><?=$row['jumlah_bayar']?></td>
-                                <td><?=$row['kembalian']?></td>
-                                <!-- id Diganti saat modul 3 -->
-                                
+                                <td><?=$row['nama']?></td>
+                                <td><?=$row['alamat']?></td>
+                                <td><?=$row['tanggal_lahir']?></td>
+                                <td><?=$row['nomer_hp']?></td>
+                                <td>
+                                    <a href="index.php?page=napi&aksi=edit&id_napi=<?=$row['id_napi']?>" class="btn btn-info">Edit</a>
+                                    <a href="index.php?page=napi&aksi=delete&id_napi=<?=$row['id_napi'];?>" class="btn btn-danger">Hapus</a>
+                                </td>
                             </tr>
                             <?php $no++; 
                             endforeach; ?>

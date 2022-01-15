@@ -20,28 +20,41 @@
         <div class="card mt-5">
             <div class="card-header" style="background-color:#DEF0FA">
             <center>
-                <h2><b>Tambah Data Pembeli</b></h2>
+                <h2><b>Tambah Data </b></h2>
             </center>
-                <a href="index.php?page=pembeli&aksi=view" class="btn btn-info float-right">Kembali</a>
+                <a href="index.php?page=seluruhdata&aksi=view" class="btn btn-info float-right">Kembali</a>
             </div>
             <div class="card-body bg-light">
-                <form action="index.php?page=pembeli&aksi=store" method="POST">
+                <form action="index.php?page=seluruhdata&aksi=store" method="POST">
                     <div class="form-group">
-                        <label>Nama : </label>
-                        <input type="text" class="form-control" name="nama">
+                            <label >Nama pelanggaran yang dilakukan : </label>
+                            <div>
+                            <select name="id_pelanggaran" class="form-control" required>
+                            <?php foreach ($data_pelanggaran as $row) :?>
+                                    <option value="<?=$row['id_pelanggaran']?>"><?=$row['nama_pelanggaran']?></option>   
+                            <?php endforeach; ?>
+                            </select>
+                            </div>
                     </div>
                     <div class="form-group">
-                        <label>Email : </label>
-                        <input type="email" class="form-control" name="email_pembeli">
+                            <label >Nama Napi : </label>
+                            <div>
+                            <select name="id_napi" class="form-control" required>
+                            <?php foreach ($data_napi as $row) :?>
+                                    <option value="<?=$row['id_napi']?>"><?=$row['nama']?></option>   
+                            <?php endforeach; ?>
+                            </select>
+                            </div>
                     </div>
                     <div class="form-group">
-                        <label>Nomer Hp : </label>
-                        <input type="text" class="form-control" name="nomer_hp">
+                        <label>Tanggal Masuk : </label>
+                        <input type="date" class="form-control" name="tgl_masuk">
                     </div>
                     <div class="form-group">
-                        <label>Alamat : </label>
-                        <input type="text" class="form-control" name="alamat">
+                        <label> lama hukuman: </label>
+                        <input type="text" class="form-control" name="lama_hukuman">
                     </div>
+                    
                     <button type="submit" class="btn btn-success btn-lg btn-block">Daftar</button>
                 </form>
             </div>

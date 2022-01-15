@@ -24,8 +24,8 @@
                 <form action="index.php?page=jenis&aksi=store" method="POST">
                     <div class="row">
                         <div class="col">
-                            <label for="">Nama Jenis : </label>
-                            <input type="text" name="nama_jenis_barang" class="form-control" required>
+                            <label for="">Jenis Hukuman: </label>
+                            <input type="text" name="nama_jenis" class="form-control" required>
                         </div>
                     </div>
                     <button type="submit" class="btn btn-primary float-right mt-3">Simpan</button>

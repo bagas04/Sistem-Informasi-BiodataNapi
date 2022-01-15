@@ -35,7 +35,7 @@ h2{
 		<div class="col-12">
 			
 			<center>
-				<h2>LOGIN OWNER</h2>
+				<h2>LOGIN ADMIN</h2>
 			</center>
 		</div>
 	</div>
@@ -45,7 +45,7 @@ h2{
 					<form action="index.php?page=auth&aksi=authOwner" method="POST">
 					  <div class="form-group">
 					    <label>Email</label>
-					    <input type="email" class="form-control" name="email_owner" placeholder="Masukkan Email Anda">
+					    <input type="email" class="form-control" name="email_admin" placeholder="Masukkan Email Anda">
 					  </div>
 					  <div class="form-group">
 					    <label>PASSWORD</label>
@@ -61,7 +61,7 @@ h2{
 			<div class="row mt-4 text-white">
 				<div class="col-12">
 					<center>
-						<p class="text-secondary"><font color='black'>Sistem Informasi Toko Spring Bed</p>
+						<p class="text-secondary"><font color='black'>Sistem Informasi Data Napi</p>
 					</center>
 				</div>
 			</div>
